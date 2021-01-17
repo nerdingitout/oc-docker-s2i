@@ -7,7 +7,17 @@ For this tutorial you will need:
 ## Estimated Time
 It will take you around 30 minutes to complete this tutorial.
 ## Steps
-- step 1
-- step 2
-## Step 1
+- Create Project
+- Create a GitHub repo and host a Dockerfile
+- Create a pod deployment using the Dockerfile from your GitHub repo
+- Verify that the container process matches the command specified in the Dockerfile
+- Setup GitHub Webhook
+- Make changes on your GitHub repository 
+## Create Project
+## Create a GitHub repo and host a Dockerfile
+## Create a pod deployment using the Dockerfile from your GitHub repo
+## Verify that the container process matches the command specified in the Dockerfile
+## Setup GitHub Webhook
+## Make changes on your GitHub repository 
+
 ## Summary
