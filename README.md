@@ -9,12 +9,12 @@ For this tutorial you will need:
 ## Estimated Time
 It will take you around 30 minutes to complete this tutorial.
 ## Steps
-- Create Project
-- Create a GitHub repo and host a Dockerfile
-- Create a pod deployment using the Dockerfile from your GitHub repo
-- Verify that the container process matches the command specified in the Dockerfile
-- Setup GitHub Webhook
-- Make changes on your GitHub repository 
+- [Create Project](https://github.com/nerdingitout/oc-docker-s2i#create-project)
+- [Create a GitHub repo and host a Dockerfile](https://github.com/nerdingitout/oc-docker-s2i#create-a-github-repo-and-host-a-dockerfile)
+- [Create a pod deployment using the Dockerfile from your GitHub repo](https://github.com/nerdingitout/oc-docker-s2i#create-a-pod-deployment-using-the-dockerfile-from-your-github-repo)
+- [Verify that the container process matches the command specified in the Dockerfile](https://github.com/nerdingitout/oc-docker-s2i#verify-that-the-container-process-matches-the-command-specified-in-the-dockerfile)
+- [Setup GitHub Webhook](https://github.com/nerdingitout/oc-docker-s2i#setup-github-webhook)
+- [Make changes on your GitHub repository](https://github.com/nerdingitout/oc-docker-s2i#make-changes-on-your-github-repository)
 ## Create Project
 ## Create a GitHub repo and host a Dockerfile
 ## Create a pod deployment using the Dockerfile from your GitHub repo
