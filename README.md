@@ -32,7 +32,15 @@ CMD ["/bin/bash", "-c", "sleep infinity"]
 # CMD ["/bin/bash", "-c", "--", "while true; do sleep 30; done;"]
 ```
 ## Create a pod deployment using the Dockerfile from your GitHub repo
-- In the OpenShift web console, switch from the Administrator perspective to the Developer perspective and create 
+- In the OpenShift web console, switch from the Administrator perspective to the Developer perspective and select to create an application 'From Dockerfile'.
+![image](https://user-images.githubusercontent.com/36239840/117294441-b37a0800-ae83-11eb-8264-879e2939553f.png)
+- Add the URL of your forked repo in the 'Git Repo URL' field and context dir ```/ubunutu```where the Dockerfile is located.
+![image](https://user-images.githubusercontent.com/36239840/117295616-1e780e80-ae85-11eb-852b-011e5be0dc13.png)
+- Scroll down to Resources section and select ```Deployment Config``` and keep the 'create a route to the application' checked then click 'Create'.
+![image](https://user-images.githubusercontent.com/36239840/117295963-8cbcd100-ae85-11eb-80c7-5972beb45822.png)
+- You will be redirected to the topology view which shows the pods created. Once it successfully builds, you will notice that the circle around your application turns dark blue. If you click on your application, it will show the Deployment Config view where you can view details, resources and logs.
+What happens here is that OpenShift builds the docker image using Dockerfile from your github repo, creates a docker image, uploads the image into OpenShift’s internal image registry and creates a Pod using that docker image.
+![image](https://user-images.githubusercontent.com/36239840/117296212-d86f7a80-ae85-11eb-922e-cbafe2e2bb31.png)
 ## Verify that the container process matches the command specified in the Dockerfile
 ## Setup GitHub Webhook
 ## Make changes on your GitHub repository 
