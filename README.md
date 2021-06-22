@@ -77,5 +77,15 @@ A successful PING test would mean Github is able to connect with your OpenShift 
 In this section, you will make a small change in Dockerfile, you will change the CMD used to keep the Container alive and commit the change. This should trigger a push event from Github to the OpenShift which will cause OpenShift to re-build the Docker image and re-deploy the pod using the newly built Docker image
 - Go to the Dockerfile in github, edit the file, comment the first command and uncomment the second command as shown in the screenshot below. Then commit your changes
 ![image](https://user-images.githubusercontent.com/36239840/122897495-1e5f9f80-d35b-11eb-8ac5-dbdd93855301.png)
+- Switch to your OpenShift GUI, go to Administrator view and click on `Builds`. You will notice a new Build is initiated automatically as shown in the following image. Once this build is done, a new Pod will be created using the new docker image that was built.
+![buildss](https://user-images.githubusercontent.com/36239840/122904339-4b16b580-d361-11eb-86f8-f2f84a963323.JPG)
+- Click on `Pods` view to see that the old Pod is being Terminated and new Pod is being created
+![podss](https://user-images.githubusercontent.com/36239840/122904544-80bb9e80-d361-11eb-8c6a-b0886ca1837b.JPG)
+- Click on the new Pod and go to the Terminal to verify that the new Container indeed is running the new process specified in the Dockerfile. Use the following command in the terminal.
+```
+ps aux | grep sleep
+```
+- You will get output similar to the following.
+![new](https://user-images.githubusercontent.com/36239840/122905023-ead44380-d361-11eb-96c6-33f84c8e9b4a.JPG)
 
 ## Summary
