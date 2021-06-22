@@ -69,7 +69,13 @@ For auto-deploy (updates to the github Dockerfile auto deploys new Pods) to work
 ![webhook](https://user-images.githubusercontent.com/36239840/122892643-9e373b00-d356-11eb-8fdd-43b92559db0a.JPG)
 - Paste the copied URL into `Payload URL` field and select application/json option in `Content type` field, leave everything rest to defaults and click on `Add webhook`
 ![url](https://user-images.githubusercontent.com/36239840/122893252-359c8e00-d357-11eb-9784-5852eb16b802.JPG)
+- Click on your newly added webhook to see details. Scroll down to see the `Recent Deliveries` section with an entry for PING test prefixed with a tick mark , which indicates the ping test was successful. Click on the entry to get more details about the REST API call and the associated response for the ping test.
+A successful PING test would mean Github is able to connect with your OpenShift cluster
+![ping](https://user-images.githubusercontent.com/36239840/122895324-0f77ed80-d359-11eb-8a94-e323c6541a0f.JPG)
 
 ## Make changes on your GitHub repository 
+In this section, you will make a small change in Dockerfile, you will change the CMD used to keep the Container alive and commit the change. This should trigger a push event from Github to the OpenShift which will cause OpenShift to re-build the Docker image and re-deploy the pod using the newly built Docker image
+- Go to the Dockerfile in github, edit the file, comment the first command and uncomment the second command as shown in the screenshot below. Then commit your changes
+![image](https://user-images.githubusercontent.com/36239840/122897495-1e5f9f80-d35b-11eb-8ac5-dbdd93855301.png)
 
 ## Summary
