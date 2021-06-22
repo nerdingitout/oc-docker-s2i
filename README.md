@@ -4,8 +4,7 @@ OpenShift Source-to-Image (S2I) is a framework that makes it easy to write image
 In this tutorial, you will learn how to use OpenShift S2I feature to build a docker image from a Dockerfile hosted in github and deploy a Pod using that docker image. You will also learn how to setup the github webhook to notify OpenShift of new code push/commit events in github, such that OpenShift will auto rebuild and redeploy Pods using the latest code/Dockerfile changes in your github.
 ## Prerequisites
 For this tutorial you will need:
-- Red Hat OpenShift Cluster 4.3 on IBM Cloud.
-- oc CLI (can be downloaded from this link or you can use it at http://shell.cloud.ibm.com/.
+- Red Hat OpenShift Cluster 4.3 or above on IBM Cloud.
 ## Estimated Time
 It will take you around 30 minutes to complete this tutorial.
 ## Steps
