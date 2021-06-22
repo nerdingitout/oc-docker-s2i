@@ -63,8 +63,8 @@ Github Webhooks allow external services to be notified when certain events happe
 For auto-deploy (updates to the github Dockerfile auto deploys new Pods) to work, you will need to configure our github repo with the webhook that OpenShift provides as part of the `BuildConfig`. This is best achieved using the GUI.
 - From menu to the left, go to 'Builds' then select the build config of your application.
 ![build](https://user-images.githubusercontent.com/36239840/122889220-a80b6f00-d353-11eb-8d09-a7d3a77d516c.JPG)
-- You will be redirected to the details view of the build config. Scroll down till you get to the webhooks section and copy the URL with secret for GitHub webhooks.
-![github webhook](https://user-images.githubusercontent.com/36239840/122890998-39c7ac00-d355-11eb-8e28-dc4ebff19c9d.JPG)
+- You will be redirected to the details view of the build config. Scroll down till you get to the webhooks section and copy the URL with secret for generic webhooks.
+![github webhook](https://user-images.githubusercontent.com/36239840/122907130-e14bdb00-d363-11eb-8e91-a1e9f0f696d5.JPG)
 - Go to your GitHub repo, under Settings, click on Webhook option then click 'add Webhook' button.
 ![webhook](https://user-images.githubusercontent.com/36239840/122892643-9e373b00-d356-11eb-8fdd-43b92559db0a.JPG)
 - Paste the copied URL into `Payload URL` field and select application/json option in `Content type` field, leave everything rest to defaults and click on `Add webhook`
@@ -87,5 +87,8 @@ ps aux | grep sleep
 ```
 - You will get output similar to the following.
 ![new](https://user-images.githubusercontent.com/36239840/122905023-ead44380-d361-11eb-96c6-33f84c8e9b4a.JPG)
+- If you go to your Github webhooks view, you will see a new entry under `Recent Deliveries` which maps to the recent notification delivered by Github to OpenShift in response to the new commit in the repo.
+![image](https://user-images.githubusercontent.com/36239840/122908220-f07f5880-d364-11eb-8a7a-6235c61a52b7.png)
 
 ## Summary
+In this tutorial, you have successfully demonstrated source-to-image (S2I) capability using Dockerfiles. This use case shows how to deploy a pod from GitHub hosted Dockerfile, setup the connection between OpenShift and GitHub using webhooks and ensure that new code changes to the repository results in new pod being deployed on the OpenShift cluster.
