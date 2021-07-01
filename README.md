@@ -34,7 +34,9 @@ CMD ["/bin/bash", "-c", "sleep infinity"]
 ## Create a pod deployment using the Dockerfile from your GitHub repo
 - In the OpenShift web console, switch from the Administrator perspective to the Developer perspective and select to create an application 'From Dockerfile'.
 ![image](https://user-images.githubusercontent.com/36239840/117294441-b37a0800-ae83-11eb-8264-879e2939553f.png)
-- Add the URL of your forked repo in the 'Git Repo URL' field and context dir ```/ubunutu```where the Dockerfile is located.
+- Copy the URL of your GitHub repo which should look like this ```https://github.com/<GITHUB-USERNAME>/oc-docker-s2i```, make sure it includes your GitHub username. 
+- Paste the URL of your GitHub repository in the 'Git Repo URL' text field.
+- Add to context dir field ```/ubunutu```which is where the Dockerfile is located.
 ![image](https://user-images.githubusercontent.com/36239840/117295616-1e780e80-ae85-11eb-852b-011e5be0dc13.png)
 - Scroll down to Resources section and select ```Deployment Config``` and keep the 'create a route to the application' checked then click 'Create'.
 ![image](https://user-images.githubusercontent.com/36239840/117295963-8cbcd100-ae85-11eb-80c7-5972beb45822.png)
@@ -69,17 +71,17 @@ For auto-deploy (updates to the github Dockerfile auto deploys new Pods) to work
 - Paste the copied URL into `Payload URL` field and select application/json option in `Content type` field, leave everything rest to defaults and click on `Add webhook`
 ![url](https://user-images.githubusercontent.com/36239840/122893252-359c8e00-d357-11eb-9784-5852eb16b802.JPG)
 - Click on your newly added webhook to see details. Scroll down to see the `Recent Deliveries` section with an entry for PING test prefixed with a tick mark , which indicates the ping test was successful. Click on the entry to get more details about the REST API call and the associated response for the ping test.
-A successful PING test would mean Github is able to connect with your OpenShift cluster
+A successful PING test would mean Github is able to connect with your OpenShift cluster.<br>
 ![ping](https://user-images.githubusercontent.com/36239840/122895324-0f77ed80-d359-11eb-8a94-e323c6541a0f.JPG)
 
 ## Make changes on your GitHub repository 
 In this section, you will make a small change in Dockerfile, you will change the CMD used to keep the Container alive and commit the change. This should trigger a push event from Github to the OpenShift which will cause OpenShift to re-build the Docker image and re-deploy the pod using the newly built Docker image
 - Go to the Dockerfile in github, edit the file, comment the first command and uncomment the second command as shown in the screenshot below. Then commit your changes
 ![image](https://user-images.githubusercontent.com/36239840/122897495-1e5f9f80-d35b-11eb-8ac5-dbdd93855301.png)
-- Switch to your OpenShift GUI, go to Administrator view and click on `Builds`. You will notice a new Build is initiated automatically as shown in the following image. Once this build is done, a new Pod will be created using the new docker image that was built.
-![buildss](https://user-images.githubusercontent.com/36239840/122904339-4b16b580-d361-11eb-86f8-f2f84a963323.JPG)
+- Go back to the web console, go to Administrator view and click on `Builds`. You will notice a new Build is initiated automatically as shown in the following image. Once this build is done, a new Pod will be created using the new docker image that was built.
+![image](https://user-images.githubusercontent.com/36239840/124136895-3e4b3d80-da96-11eb-89fe-c67a079cb4e5.png)
 - Click on `Pods` view to see that the old Pod is being Terminated and new Pod is being created
-![podss](https://user-images.githubusercontent.com/36239840/122904544-80bb9e80-d361-11eb-8c6a-b0886ca1837b.JPG)
+![pod](https://user-images.githubusercontent.com/36239840/124137052-5de26600-da96-11eb-8092-73d9f5ca959d.png)
 - Click on the new Pod and go to the Terminal to verify that the new Container indeed is running the new process specified in the Dockerfile. Use the following command in the terminal.
 ```
 ps aux | grep sleep
