@@ -16,7 +16,8 @@ It will take you around 30 minutes to complete this tutorial.
 - [Make changes on your GitHub repository](https://github.com/nerdingitout/oc-docker-s2i#make-changes-on-your-github-repository)
 
 ## Fork the GitHub repo and host a Dockerfile
-- Fork this GitHub repository, by clicking the Fork button at the top of this repo. You will be making changes in the Dockerfile to trigger new pod deployments at a later step in this tutorial.
+- Go to <a href="https://github.com/nerdingitout/oc-docker-s2i">this GitHub repository</a> and fork it by clicking the Fork button at the top right of the repo. You will be making changes in the Dockerfile to trigger new pod deployments at a later step in this tutorial.
+
 The repository has a Dockerfile that contains the following lines of code.
 ```
 # simple dockerfile to test OCP s2i using Dockerfile 
@@ -60,7 +61,7 @@ ps aux | grep sleep
 ![sleep](https://user-images.githubusercontent.com/36239840/122886717-421de800-d351-11eb-93eb-b2a9f4893d60.JPG)
 
 ## Setup GitHub Webhook
-Github Webhooks allow external services to be notified when certain events happen.
+Github Webhooks allow external services to be notified when certain events happen.<br>
 For auto-deploy (updates to the github Dockerfile auto deploys new Pods) to work, you will need to configure our github repo with the webhook that OpenShift provides as part of the `BuildConfig`. This is best achieved using the GUI.
 - From menu to the left, go to 'Builds' then select the build config of your application.
 ![build](https://user-images.githubusercontent.com/36239840/122889220-a80b6f00-d353-11eb-8d09-a7d3a77d516c.JPG)
