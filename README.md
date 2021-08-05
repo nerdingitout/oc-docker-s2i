@@ -37,7 +37,7 @@ CMD ["/bin/bash", "-c", "sleep infinity"]
 ![image](https://user-images.githubusercontent.com/36239840/117294441-b37a0800-ae83-11eb-8264-879e2939553f.png)
 - Copy the URL of your GitHub repo which should look like this ```https://github.com/<GITHUB-USERNAME>/oc-docker-s2i```, make sure it includes your GitHub username. 
 - Paste the URL of your GitHub repository in the 'Git Repo URL' text field.
-- Add to context dir field ```/ubunutu```which is where the Dockerfile is located.
+- Add to context dir field ```/ubuntu```which is where the Dockerfile is located.
 ![image](https://user-images.githubusercontent.com/36239840/117295616-1e780e80-ae85-11eb-852b-011e5be0dc13.png)
 - Scroll down to Resources section and select ```Deployment Config``` and keep the 'create a route to the application' checked then click 'Create'.
 ![image](https://user-images.githubusercontent.com/36239840/117295963-8cbcd100-ae85-11eb-80c7-5972beb45822.png)
